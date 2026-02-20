@@ -1,1 +1,21 @@
 
+class Solution {
+    public boolean isHappy(int n) {
+
+        // we know that  condtiontion n 1 or 4 break the because repeat 
+        while( n !=1 && n !=4){
+            int sum =0;
+            while( n != 0){
+                int rem = n %10;
+                sum +=rem*rem;
+                n /=10;
+            }
+            n=sum;
+        }
+        return n ==1;
+    }
+}
+
+// tc o(lon(n)) && sc O(1)   use 
+// tc log(n) && sc o(logn)  use hashset to check number
+// tc o(n^2) && sc o(n)     traverse all step by step 
